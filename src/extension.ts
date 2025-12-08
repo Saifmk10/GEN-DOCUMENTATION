@@ -1,8 +1,11 @@
 import * as vscode from "vscode"
+import {folderCreated} from "./fileOperation/folderCreated"
 
 // this is gonna activate the extension 
 export function activate(context: vscode.ExtensionContext) {
 	console.log("THE EXTENSION HAS BEEN ACTIVATED")
+	folderCreated()
+
 
 	const disposable = vscode.commands.registerCommand("gen-documentation.genDoc", async () => {
 		let popUpMessage = await vscode.window.showInformationMessage("GEN-DOCUMENTATION LAUNCHED", "CANCEL", "LEARN MORE")
